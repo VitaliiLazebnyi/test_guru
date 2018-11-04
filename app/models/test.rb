@@ -3,8 +3,10 @@ class Test < ApplicationRecord
   has_many   :marks
 
   def self.with_category(title)
-    Test.all.where(
-        category: Category.where(title: title)
-    )
+    Test.select(:title)
+        .joins('JOIN categories ON tests.category_id = categories.id')
+        .where('categories.title': title)
+        .order(:title)
+        .map &:title
   end
 end
