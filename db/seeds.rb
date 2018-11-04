@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+user     = User.new(name: 'Vitalii')
+category = Category.new(title: 'General')
+test     = Test.new(title: 'Rails', category: category)
+question = Question.new(body: 'What is Rails?', test: test)
+answer   = Answer.new(body: 'Fullstack rfamework.', question: question)
+mark     = Mark.new(value: 5, user: user, test: test)
