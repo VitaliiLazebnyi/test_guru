@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2018_11_04_123510) do
 
   create_table "answers", force: :cascade do |t|
-    t.string "body", null: false
+    t.text "body", null: false
     t.boolean "correct", default: false
     t.integer "question_id"
     t.datetime "created_at", null: false
