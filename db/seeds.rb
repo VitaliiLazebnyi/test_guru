@@ -12,3 +12,5 @@ test     = Test.new(title: 'Rails', category: category)
 question = Question.new(body: 'What is Rails?', test: test)
 answer   = Answer.new(body: 'Fullstack rfamework.', question: question)
 mark     = Mark.new(value: 5, user: user, test: test)
+
+[user, category, test, question, answer, mark].each &:save
