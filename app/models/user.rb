@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :marks
+  has_many :tests, through: :marks
 
   def passed_with(level)
     Test.where(level: level, 'marks.user_id': id)

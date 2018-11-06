@@ -1,6 +1,7 @@
 class Test < ApplicationRecord
   belongs_to :category
   has_many   :marks
+  has_many   :users, through: :marks
 
   def self.with_category(title)
     Test.select(:title)
