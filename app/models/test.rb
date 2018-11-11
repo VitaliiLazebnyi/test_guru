@@ -21,4 +21,21 @@ class Test < ApplicationRecord
     where(level: level, 'marks.user_id': user.id)
         .joins('JOIN marks ON marks.test_id = tests.id')
   end
+
+  validates_associated :questions
+  validates_associated :marks
+  validates_associated :users
+
+  validates :title,
+            presence: true,
+            length: { in: 3..256 }
+
+  validates :level, presence: true,
+            numericality: {
+                only_integer:          true,
+                greater_than_or_equal_to: 0
+            }
+
+  validates :category, presence: true
+  validates :author,   presence: true
 end
