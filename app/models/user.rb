@@ -3,8 +3,7 @@ class User < ApplicationRecord
   has_many :passed_tests, through: :marks, source: :test
   has_many :owned_tests, class_name: :Test, foreign_key: :author_id
 
-  def passed_with(level)
-    Test.where(level: level, 'marks.user_id': id)
-        .joins('JOIN marks ON marks.test_id = tests.id')
+  def tests_with_level(level)
+    Test.with_level_for_user(level, self)
   end
 end

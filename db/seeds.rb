@@ -8,7 +8,7 @@
 
 user     = User.create(name: 'Vitalii')
 category = Category.create(title: 'General')
-test     = Test.create(title: 'Rails', category: category)
-question = Question.create(body: 'What is Rails?', test: test)
-answer   = Answer.create(body: 'Fullstack rfamework.', question: question)
+test     = category.tests.create(title: 'Rails', author: user)
+question = test.questions.create(body: 'What is Rails?')
+answer = question.answers.create(body: 'Fullstack framework.')
 mark     = Mark.create(value: 5, user: user, test: test)
