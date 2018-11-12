@@ -18,6 +18,6 @@ class User < ApplicationRecord
             }
 
   def tests_with_level(level)
-    Test.with_level_for_user(level, self)
+    passed_tests.where(level: level)
   end
 end
