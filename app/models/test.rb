@@ -14,10 +14,12 @@ class Test < ApplicationRecord
         .where('categories.title': title)
   end
 
+
   validates_associated :questions
   validates_associated :marks
   validates_associated :users
 
+  validates :title, uniqueness: { scope: :level }
   validates :title,
             presence: true,
             length: { in: 3..256 }
