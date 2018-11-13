@@ -9,11 +9,10 @@ class Test < ApplicationRecord
   scope :midle, -> { where(level: 2..4) }
   scope :high,  -> { where(level: 5..Float::INFINITY) }
 
-  scope :titles_with_category, -> (title) do
-        joins('JOIN categories ON tests.category_id = categories.id')
-        .where('categories.title': title)
+  scope :with_category_titles, -> (title) do
+        joins(:category).
+        where('categories.title': title)
   end
-
 
   validates_associated :questions
   validates_associated :marks
