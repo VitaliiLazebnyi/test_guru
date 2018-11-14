@@ -11,7 +11,7 @@ class Test < ApplicationRecord
 
   scope :with_category_titles, -> (title) do
         joins(:category).
-        where('categories.title': title)
+        where(categories: {title: title} )
   end
 
   validates_associated :questions
