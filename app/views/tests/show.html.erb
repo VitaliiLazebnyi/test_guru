@@ -1,0 +1,25 @@
+<h1>Test</h1>
+<div>
+  <%= link_to 'Edit', edit_test_path(@test) %>
+  <%= link_to 'Delete', test_path(@test), method: :delete %>
+</div>
+
+<p>
+  <div>Title: <%= @test.title %></div>
+  <div>Category: <%= @test.category.title %></div>
+  <div>Level: <%= @test.level %></div>
+  <div>Author: <%= @test.author.name %></div>
+  <div>Questions number: <%= @test.questions.size %></div>
+</p>
+
+<% if @test.questions.present?  %>
+  <h2>Questions:</h2>
+  <p>
+    <%= render @test.questions %>
+  </p>
+<% end %>
+
+<p>
+  <div><%= link_to 'Add question', new_test_question_path(@test) %></div>
+  <div><%= link_to 'All tests', tests_path %></div>
+</p>
