@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_11_175750) do
+ActiveRecord::Schema.define(version: 2018_11_30_021230) do
 
   create_table "answers", force: :cascade do |t|
     t.text "body", null: false
@@ -28,22 +28,24 @@ ActiveRecord::Schema.define(version: 2018_11_11_175750) do
     t.index ["title"], name: "index_categories_on_title", unique: true
   end
 
-  create_table "marks", force: :cascade do |t|
-    t.integer "value", null: false
-    t.integer "user_id", null: false
-    t.integer "test_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["test_id"], name: "index_marks_on_test_id"
-    t.index ["user_id"], name: "index_marks_on_user_id"
-  end
-
   create_table "questions", force: :cascade do |t|
     t.string "body", null: false
     t.integer "test_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["test_id"], name: "index_questions_on_test_id"
+  end
+
+  create_table "test_passages", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "test_id"
+    t.integer "question_id"
+    t.integer "correctly_answered", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_test_passages_on_question_id"
+    t.index ["test_id"], name: "index_test_passages_on_test_id"
+    t.index ["user_id"], name: "index_test_passages_on_user_id"
   end
 
   create_table "tests", force: :cascade do |t|
