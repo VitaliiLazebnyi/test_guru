@@ -6,6 +6,7 @@
   <td><%= test.questions.size %></td>
   <td><%= test.created_at.iso8601 %></td>
   <td><%= test.updated_at.iso8601 %></td>
+  <td><%= button_to 'Start', start_test_path(test) %></td>
   <td><%= link_to 'Edit', edit_test_path(test) %></td>
   <td><%= link_to 'Delete', test_path(test), method: :delete %></td>
 </tr>

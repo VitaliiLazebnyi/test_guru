@@ -10,5 +10,12 @@ user     = User.create(name: 'Vitalii', email: "my#{Time.now.to_i}@email.com")
 category = Category.create(title: "General#{Time.now.to_i}")
 test     = category.tests.create(title: "Rails#{Time.now.to_i}", author: user)
 question = test.questions.create(body: 'What is Rails?')
-answer = question.answers.create(body: 'Fullstack framework.')
-mark     = Mark.create(value: 5, user: user, test: test)
+answer1   = question.answers.create(body: 'Fullstack framework.', correct: true)
+answer2   = question.answers.create(body: 'Frontend framework.')
+answer3   = question.answers.create(body: 'Backend framework.')
+answer4   = question.answers.create(body: 'Some... framework.')
+mark     = TestPassage.create(
+    correctly_answered: 3,
+    user: user,
+    test: test
+)
