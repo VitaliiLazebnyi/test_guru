@@ -1,4 +1,5 @@
 class QuestionsController < ApplicationController
+  before_action :authentificate_user!
   before_action :set_test,     only: [:new, :create]
   before_action :set_question, only: [:edit, :update, :destroy]
 

@@ -1,0 +1,18 @@
+  <% if logged_in? %>
+    <p>
+      Welcome, <%= current_user.name %>
+      <%= link_to 'Guru', root_path %>.
+    </p>
+    <p>
+      <%= link_to 'Logout', logout_path %>
+    </p>
+  <% else %>
+    <p>
+      <% if controller_name != 'sessions' %>
+        <%= link_to 'Login', login_path %>
+      <% end %>
+      <% if controller_name != 'users' %>
+        <%= link_to 'Sign up', signup_path %>
+      <% end %>
+    </p>
+  <% end %>
