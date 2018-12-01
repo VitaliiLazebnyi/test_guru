@@ -1,4 +1,10 @@
+require 'digest/sha1'
+
 class User < ApplicationRecord
+  const EMAIL_REGEXPЗ = /\A[\w.-]+@[\w.-]+\.[\w.-]+\z/
+
+  has_secure_password
+
   has_many :test_passages
   validates_associated :test_passages
 
@@ -12,12 +18,10 @@ class User < ApplicationRecord
             presence: true,
             length: { in: 3..256 }
 
-  validates :email,
-            presence:   true,
-            uniqueness: true,
-            format: {
-                with: /\A[^@\s]+@[^@.\s]+\.+[^@.\s]+\z/
-            }
+  validates :email, presence: true,
+            length: { in: 3..256 },
+            uniqueness: { case_sensitive: false },
+            format: { with: EMAIL_REGEXP }
 
   def tests_with_level(level)
     tests_passed.where(level: level)

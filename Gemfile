@@ -26,7 +26,7 @@ gem 'jbuilder'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt'
+gem 'bcrypt'
 
 # Use ActiveStorage variant
 # gem 'mini_magick'

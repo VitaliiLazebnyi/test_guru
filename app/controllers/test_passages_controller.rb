@@ -1,6 +1,13 @@
 class TestPassagesController < ApplicationController
+  before_action :authentificate_user!
   before_action :set_test_passage
   before_action :redirect_to_results, except: :result, if: :finished?
+
+  def create
+    @test = Test.find(params[:id])
+    current_user.tests.push @test
+    redirect_to current_user.test_passage(@test)
+  end
 
   def show; end
 

@@ -1,0 +1,13 @@
+<%= form_with url: login_path, local: true do |form| %>
+  <p>
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :email %>
+  </p>
+
+  <p>
+    <%= form.label :password %>
+    <%= form.text_field :password, id: :password %>
+  </p>
+
+  <%= form.submit 'Enter' %>
+<% end %>
