@@ -1,5 +1,5 @@
 class TestPassagesController < ApplicationController
-  before_action :authentificate_user!
+  before_action :authenticate_user!
   before_action :set_test_passage
   before_action :redirect_to_results, except: :result, if: :finished?
 
