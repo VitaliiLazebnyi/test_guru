@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root 'tests#index'
 
-  resources :tests, shallow: true do
+  resources :tests, only: :index, shallow: true do
     resources :questions, except: [:index, :show]
   end
 
@@ -11,6 +11,12 @@ Rails.application.routes.draw do
     member do
       post :start, to: 'test_passages#create'
       get :result
+    end
+  end
+
+  namespace :admin do
+    resources :tests, shallow: true do
+      resources :questions, except: [:index, :show]
     end
   end
 end
