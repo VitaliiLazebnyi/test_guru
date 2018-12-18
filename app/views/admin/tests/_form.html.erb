@@ -1,7 +1,7 @@
-<%= form_with model: @test, local: true do |form| %>
+<%= form_with model: @test, url: '/admin/tests', local: true do |form| %>
   <%= render 'shared/errors', resource: @test %>
 
-  <input name="test[author_id]" value="<%= User.last.id %>" type="hidden" />
+  <input name="test[author_id]" value="<%= current_user.id %>" type="hidden" />
 
   <div>
     <%= form.label :title %>
