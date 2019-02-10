@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    if current_user.is_a?(Admin)
+    if current_user.admin?
       admin_tests_path
     else
       tests_path

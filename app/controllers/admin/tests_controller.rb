@@ -1,5 +1,5 @@
 class Admin::TestsController < Admin::BaseController
-  before_action :set_test, only: %i[show edit update destroy start]
+  before_action :set_test, only: %i[show edit update destroy]
 
   def index
     @tests = Test.all
@@ -30,7 +30,7 @@ class Admin::TestsController < Admin::BaseController
       render :edit
     end
   end
-  
+
   def destroy
     @test.destroy
     redirect_to admin_tests_path
