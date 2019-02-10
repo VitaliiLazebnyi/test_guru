@@ -26,7 +26,10 @@ gem 'jbuilder'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis'
 # Use ActiveModel has_secure_password
-gem 'bcrypt'
+# gem 'bcrypt'
+
+# Auth
+gem 'devise'
 
 # Use ActiveStorage variant
 # gem 'mini_magick'
@@ -49,6 +52,8 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen'
+
+  gem 'letter_opener'
 end
 
 group :test do

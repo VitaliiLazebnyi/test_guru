@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-user     = User.create(name: 'Vitalii', email: "my#{Time.now.to_i}@email.com")
+user     = User.create(name: 'Vitalii', email: "my#{Time.now.to_i}@email.com", password: '123456')
 category = Category.create(title: "General#{Time.now.to_i}")
 test     = category.tests.create(title: "Rails#{Time.now.to_i}", author: user)
 question = test.questions.create(body: 'What is Rails?')

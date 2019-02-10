@@ -1,9 +1,13 @@
-require 'digest/sha1'
-
 class User < ApplicationRecord
-  EMAIL_REGEXP = /\A[\w.-]+@[\w.-]+\.[\w.-]+\z/.freeze
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable,
+         :registerable,
+         :recoverable,
+         :rememberable,
+         :validatable
 
-  has_secure_password
+  EMAIL_REGEXP = /\A[\w.-]+@[\w.-]+\.[\w.-]+\z/.freeze
 
   has_many :test_passages
   validates_associated :test_passages
@@ -29,5 +33,9 @@ class User < ApplicationRecord
 
   def test_passage(test)
     test_passages.order(id: :desc).find_by(test_id: test.id)
+  end
+
+  def admin?
+    false
   end
 end
