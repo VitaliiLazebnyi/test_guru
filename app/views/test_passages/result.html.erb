@@ -1,12 +1,12 @@
-<h1>Test <%= @test_passage.test.title %> was completed.</h1>
+<h1><%= t('.test') %> <%= @test_passage.test.title %> was completed.</h1>
 
-Greatings!
+<%= t('.greatings') %>
 <% if @test_passage.passed? %>
-  <font face="times" color="green">Your result is: 'PASSED'</font>
+  <font face="times" color="green"><%= t('.passed') %></font>
 <% else %>
-  <font face="verdana" color="red">Your result is: 'FAILED'</font>
+  <font face="verdana" color="red"><%= t('.failed') %></font>
 <% end %>
 
 <p>
-  <%= link_to 'Back to all tests', tests_path %>
+  <%= link_to t('.back'), tests_path %>
 </p>

@@ -1,4 +1,4 @@
-<%= form_with  admin_test_path(@test), url: '/admin/tests', local: true do |form| %>
+<%= form_with model: @test, url: admin_test_path(@test), local: true do |form| %>
   <%= render 'shared/errors', resource: @test %>
 
   <input name="test[author_id]" value="<%= current_user.id %>" type="hidden" />

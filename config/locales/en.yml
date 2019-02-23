@@ -1,33 +1,104 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  application:
+    welcome:
+      welcome: "Welcome"
+      home: "Home page"
+      guru: "Guru"
+      login: "Login"
+      logout: "Logout"
+      signup: "Signup"
+    footer:
+      testguru: "Test guru"
+      test_project: "Project at online-school Thinknetica"
+
+  layouts:
+    admin:
+      title: "Admin | Test Guru"
+      guru: "Guru"
+    application:
+      title: "Test Guru"
+
+  admin:
+    base:
+      nav:
+        title: "Admin | Test Guru"
+        welcome: "Welcome"
+        logout: "Logout"
+    questions:
+      question:
+        edit: "Edit"
+        delete: "Remove"
+      edit:
+        back: "Back to test"
+    tests:
+      test:
+        start: 'Start'
+        edit: 'Edit'
+        delete: 'Delete'
+      edit:
+        title: "Edit"
+      index:
+        title: "Tests list"
+        id: "ID"
+        title: "Title"
+        level: "Level"
+        author: "Author"
+        questions_number: "Questions number"
+        created: "Created at"
+        updated: "Updated at"
+        start: "Start"
+        edit: "Edit"
+        delete: "Remove"
+        create: "Create"
+      new:
+        title: "New test"
+      show:
+        title: 'Title'
+        edit: 'Edit'
+        delete: 'Delete'
+        test_title: 'Title'
+        category: 'Category'
+        level: 'Level'
+        author: 'Author'
+        questions_number: 'Questions number'
+        questions: 'Questions'
+        add: 'Add question'
+        all_tests: 'All tests'
+
+  test_passages:
+    result:
+      test: "Test"
+      greatings: "Greatings!"
+      passed: "Your result is: 'PASSED'"
+      failed: "Your result is: 'FAILED'"
+      back: 'Back to all tests'
+
+  tests:
+    index:
+      header: "Tests list"
+      id: "ID"
+      title: "Title"
+      level: "Level"
+      author: "Author"
+      questions_number: "Questions number"
+      created: "Created"
+      updated: "Updated"
+      start: "Start"
+      edit: "Edit"
+      delete: "Delete"
+    test:
+      start: "Start"
+
+  tests_mailer:
+    completed_test:
+      subject: 'You just completed TestGuru test.'
+      header: "Hurray!"
+      you_completed: "Congratulations! You completed the "
+      you_can: "You also can finish "
+      this_ones: 'thease ones'
+
+  shared:
+    errors:
+      header:
+        one: "1 error detected"
+        other: "#{count} errors detected"

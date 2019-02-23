@@ -6,5 +6,5 @@
   <td><%= test.questions.size %></td>
   <td><%= test.created_at.iso8601 %></td>
   <td><%= test.updated_at.iso8601 %></td>
-  <td><%= button_to 'Start', start_test_passage_path(test) %></td>
+  <td><%= button_to t('.start'), start_test_passage_path(test) %></td>
 </tr>

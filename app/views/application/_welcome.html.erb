@@ -1,18 +1,18 @@
   <% if user_signed_in? %>
     <p>
-      Welcome, <%= current_user.name %>
-      <%= link_to 'Guru', root_path %>.
+      <%= t(".welcome") %>, <%= current_user.name %>
+      <%= link_to t(".home"), root_path %>.
     </p>
     <p>
-      <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+      <%= link_to t(".logout"), destroy_user_session_path, method: :delete %>
     </p>
   <% else %>
     <p>
       <% if controller_name != 'sessions' %>
-        <%= link_to 'Login', new_user_session_path %>
+        <%= link_to t(".login"), new_user_session_path %>
       <% end %>
       <% if controller_name != 'registrations' %>
-        <%= link_to 'Sign up', new_user_registration_path %>
+        <%= link_to t(".signup"), new_user_registration_path %>
       <% end %>
     </p>
   <% end %>
