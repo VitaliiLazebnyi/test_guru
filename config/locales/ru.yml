@@ -1,0 +1,106 @@
+ru:
+  application:
+    welcome:
+      welcome: "Здравствуйте"
+      home: "Домашня страница"
+      guru: "Гуру"
+      login: "Войти"
+      logout: "Выйти"
+      signup: "Регистрация"
+    footer:
+      testguru: "Мастер Тестов"
+      test_project: "Проект в онлай-школе Thinknetica"
+
+  layouts:
+    admin:
+      title: "Панель администратора | Мастер Тестов"
+      guru: "Гуру"
+    application:
+      title: "Мастер Тестов"
+
+  admin:
+    base:
+      nav:
+        title: "Панель администратора | Мастер Тестов"
+        welcome: "Здравствуйте"
+        logout: "Выйти"
+    questions:
+      question:
+        edit: "Редактировать"
+        delete: "Удалить"
+      edit:
+        back: "Назад к тесту"
+    tests:
+      test:
+        start: 'Начать'
+        edit: 'Редактировать'
+        delete: 'Удалить'
+      edit:
+        title: "Редактировать"
+      index:
+        title: "Список тестов"
+        id: "№"
+        title: "Название"
+        level: "Уровень"
+        author: "Автор"
+        questions_number: "Количество вопросов"
+        created: "Создан"
+        updated: "Обновлен"
+        start: "Начать"
+        edit: "Редактировать"
+        delete: "Удалить"
+        create: "Создать"
+      new:
+        title: "Новый тест"
+      show:
+        title: 'Тест'
+        edit: 'Редактировать'
+        delete: 'Удалить'
+        test_title: 'Заголовок'
+        category: 'Категория'
+        level: 'Уровень'
+        author: 'Автор'
+        questions_number: 'Количество вопросов'
+        questions: 'Вопросы'
+        add: 'Добавить вопрос'
+        all_tests: 'Все тесты'
+
+  test_passages:
+    result:
+      test: "Тест"
+      greatings: "Поздравляем!"
+      passed: "Ваш результат: 'ПРОШЕЛ'"
+      failed: "Ваш результат: 'НЕ ПРОШЕЛ'"
+      back: 'Назад к списку тестов'
+
+  tests:
+    index:
+      header: "Список тестов"
+      id: "№"
+      title: "Заголовок"
+      level: "Уровень"
+      author: "Автор"
+      questions_number: "Количество тестов"
+      created: "Создан"
+      updated: "Обновлен"
+      start: "Начать"
+      edit: "Редактировать"
+      delete: "Удалить"
+    test:
+      start: "Начать"
+
+  tests_mailer:
+    completed_test:
+      subject: 'Вы прошли тест на платформе Мастер Тестов.'
+      header: "Урра!"
+      you_completed: "Поздравляем! Вы прошли "
+      you_can: "Также можете пройти "
+      this_ones: 'вот эти'
+
+  shared:
+    errors:
+      header:
+        one: "1 ошибка обнаружен"
+        few: "%{count} ошибки обнаружено"
+        many: "%{count} ошибок обнаружено"
+        other: "%{count} ошибок обнаружено"

@@ -1,18 +1,18 @@
-<h1>Tests list</h1>
+<h1><%= t('.header') %></h1>
 
 <p>
   <table>
     <tr>
-      <th>id</th>
-      <th>Title</th>
-      <th>Level</th>
-      <th>Author</th>
-      <th>Questions number</th>
-      <th>Created</th>
-      <th>Updated</th>
-      <th>Start</th>
-      <th>Edit</th>
-      <th>Delete</th>
+      <th><%= t('.id') %></th>
+      <th><%= t('.title') %></th>
+      <th><%= t('.level') %></th>
+      <th><%= t('.author') %></th>
+      <th><%= t('.questions_number') %></th>
+      <th><%= t('.created') %></th>
+      <th><%= t('.updated') %></th>
+      <th><%= t('.start') %></th>
+      <th><%= t('.edit') %></th>
+      <th><%= t('.delete') %></th>
     </tr>
     <%= render @tests %>
   </table>

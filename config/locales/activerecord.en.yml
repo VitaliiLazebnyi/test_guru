@@ -1,0 +1,22 @@
+en:
+  activerecord:
+    models:
+      admin: "Administrator"
+      answer: "Answer"
+      category: "Category"
+      question: "Question"
+      test: "Test"
+      test_passage: "Test Passage"
+      user: "User"
+    attributes:
+      admin:
+        firstname: "First name"
+        lastname: "Last name"
+      answer:
+        question: "Question"
+        body: "Body"
+
+    errors:
+      messages:
+        blank: "can't be blank"
+        wrong_answers_quantity: "question can't contain more then 4 answers and less then 1"

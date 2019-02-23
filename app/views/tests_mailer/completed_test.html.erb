@@ -1,6 +1,6 @@
-<h1>Hurray!</h1>
+<h1><%= t('.header') %></h1>
 
 <p>
-  Congratilations! You completed the <b><%= @test.title %></b>
-  You also can finish <%= link_to 'thease ones', tests_url %>.
+  <%= t('.you_completed') %><b><%= @test.title %></b>
+  <%= t('.you_can') %><%= link_to t('.this_ones'), tests_url + "?lang=#{I18n.locale}" %>.
 </p>

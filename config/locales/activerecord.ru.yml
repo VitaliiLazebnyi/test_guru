@@ -1,0 +1,27 @@
+ru:
+  activerecord:
+    models:
+      admin: "Администратор"
+      answer: "Ответ"
+      category: "Категория"
+      question: "Вопрос"
+      test: "Тест"
+      test_passage: "Прохождение"
+      user: "Пользователь"
+    attributes:
+      admin:
+        firstname: "Имя"
+        lastname: "Фамилия"
+      answer:
+        question: "Вопрос"
+        body: "Тело"
+      test:
+        title: "Заголовок"
+        level: "Уровень"
+        category_id: "Категория"
+    errors:
+      messages:
+        blank: "не может быть пустым"
+        too_short: "должно содержать минимум %{count} символов"
+        too_long: "должно содержать максимум %{count} символов"
+        wrong_answers_quantity: "в вопросе должно быть от 1ого до 4ех ответов"

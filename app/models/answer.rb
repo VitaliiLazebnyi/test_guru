@@ -12,8 +12,7 @@ class Answer < ApplicationRecord
 
   def answer_is_less_then_fifth
     if !question || question.answers.size >= 4
-      errors.add(:question, "question can't contain more then "\
-        "4 answers and less then 1")
+      errors.add(:question, :wrong_answers_quantity)
     end
   end
 end
