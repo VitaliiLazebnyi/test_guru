@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Test < ApplicationRecord
   belongs_to :category
   belongs_to :author, class_name: :User, foreign_key: :author_id
@@ -14,10 +16,10 @@ class Test < ApplicationRecord
             length: { in: 3..256 }
 
   validates :level, presence: true,
-            numericality: {
-                only_integer:          true,
-                greater_than_or_equal_to: 0
-            }
+                    numericality: {
+                      only_integer: true,
+                      greater_than_or_equal_to: 0
+                    }
 
   validates :category, presence: true
   validates :author,   presence: true
@@ -26,8 +28,8 @@ class Test < ApplicationRecord
   scope :midle, -> { where(level: 2..4) }
   scope :high,  -> { where(level: 5..Float::INFINITY) }
 
-  scope :with_category_titles, -> (title) do
-        joins(:category).
-        where(categories: {title: title} )
-  end
+  scope :with_category_titles, lambda { |title|
+    joins(:category)
+      .where(categories: { title: title })
+  }
 end

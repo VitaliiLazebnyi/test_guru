@@ -1,13 +1,15 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   devise_for :users
 
   root 'tests#index'
 
   resources :tests, only: :index, shallow: true do
-    resources :questions, except: [:index, :show]
+    resources :questions, except: %i[index show]
   end
 
-  resources :test_passages, only: [:show, :update] do
+  resources :test_passages, only: %i[show update] do
     member do
       post :start, to: 'test_passages#create'
       get :result
@@ -16,7 +18,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :tests, shallow: true do
-      resources :questions, except: [:index, :show]
+      resources :questions, except: %i[index show]
     end
   end
 end

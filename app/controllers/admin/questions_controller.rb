@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class QuestionsController < Admin::BaseController
-  before_action :set_test,     only: [:new, :create]
-  before_action :set_question, only: [:edit, :update, :destroy]
+  before_action :set_test,     only: %i[new create]
+  before_action :set_question, only: %i[edit update destroy]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_question_not_found
 

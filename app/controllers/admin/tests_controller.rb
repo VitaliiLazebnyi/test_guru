@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Admin::TestsController < Admin::BaseController
   before_action :set_test, only: %i[show edit update destroy]
 

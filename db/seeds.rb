@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -14,8 +16,8 @@ answer1   = question.answers.create(body: 'Fullstack framework.', correct: true)
 answer2   = question.answers.create(body: 'Frontend framework.')
 answer3   = question.answers.create(body: 'Backend framework.')
 answer4   = question.answers.create(body: 'Some... framework.')
-mark     = TestPassage.create(
-    correctly_answered: 3,
-    user: user,
-    test: test
+mark = TestPassage.create(
+  correctly_answered: 3,
+  user: user,
+  test: test
 )
