@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TestPassagesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_test_passage

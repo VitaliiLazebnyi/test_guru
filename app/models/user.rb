@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -23,9 +25,9 @@ class User < ApplicationRecord
             length: { in: 3..256 }
 
   validates :email, presence: true,
-            length: { in: 3..256 },
-            uniqueness: { case_sensitive: false },
-            format: { with: EMAIL_REGEXP }
+                    length: { in: 3..256 },
+                    uniqueness: { case_sensitive: false },
+                    format: { with: EMAIL_REGEXP }
 
   def tests_with_level(level)
     tests_passed.where(level: level)

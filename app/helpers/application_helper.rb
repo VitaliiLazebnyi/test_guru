@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ApplicationHelper
   def question_header
     action = @question.new_record? ? 'Create' : 'Edit'

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TestPassage < ApplicationRecord
   PASS_RATE = 0.85
 
@@ -14,9 +16,7 @@ class TestPassage < ApplicationRecord
   # Should be used in controller and view
   #
   def accept!(answer_ids)
-    if correct_answer?(answer_ids)
-      self.correctly_answered += 1
-    end
+    self.correctly_answered += 1 if correct_answer?(answer_ids)
 
     save!
   end
@@ -38,14 +38,15 @@ class TestPassage < ApplicationRecord
   end
 
   private
+
   #
   # Before validation callbacks
   #
   def set_next_question
     q = if question
-      test.questions.order(:id).where('id > ?', question.id).first
-    else
-      test.questions.first
+          test.questions.order(:id).where('id > ?', question.id).first
+        else
+          test.questions.first
     end
 
     self.question = q

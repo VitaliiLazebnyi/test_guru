@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddConstrains < ActiveRecord::Migration[5.2]
   def change
     change_column_null(:answers,   :question_id, false)
