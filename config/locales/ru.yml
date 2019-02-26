@@ -66,6 +66,10 @@ ru:
         all_tests: 'Все тесты'
 
   test_passages:
+    show:
+      passing_of: "Прохождение"
+      next: "Следующий"
+      question_no: "Вопрос №"
     result:
       test: "Тест"
       greatings: "Поздравляем!"
@@ -104,3 +108,11 @@ ru:
         few: "%{count} ошибки обнаружено"
         many: "%{count} ошибок обнаружено"
         other: "%{count} ошибок обнаружено"
+
+  devise:
+    sessions:
+      new:
+        login: "Войти"
+        rememberme: "Запомнить меня"
+        email_placeholder: "Введите свой email"
+        password_placeholder: "Введите свой пароль"

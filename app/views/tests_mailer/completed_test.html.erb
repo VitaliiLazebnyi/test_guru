@@ -2,5 +2,5 @@
 
 <p>
   <%= t('.you_completed') %><b><%= @test.title %></b>
-  <%= t('.you_can') %><%= link_to t('.this_ones'), tests_url + "?lang=#{I18n.locale}" %>.
+  <%= t('.you_can') %><%= link_to t('.this_ones'), root_url + "?lang=#{I18n.locale}" %>.
 </p>

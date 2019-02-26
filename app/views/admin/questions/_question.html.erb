@@ -1,5 +1,5 @@
 <div>
   <%= question.body %>
-  <%= link_to t(".edit"), edit_question_path(question) %>
-  <%= link_to t(".delete"), question_path(question), method: :delete %>
+  <%= link_to t(".edit"), edit_question_path(question), class: 'btn btn-primary' %>
+  <%= link_to t(".delete"), question_path(question), method: :delete, class: 'btn btn-primary' %>
 </div>

@@ -1,21 +1,24 @@
-  <% if user_signed_in? %>
-    <p>
-      <%= t(".welcome") %>, <%= current_user.name %>
-      <%= link_to t(".home"), root_path %>.
-    </p>
-    <p>
-      <%= link_to t(".logout"), destroy_user_session_path, method: :delete %>
-    </p>
-  <% else %>
-    <p>
-      <% if controller_name != 'sessions' %>
-        <%= link_to t(".login"), new_user_session_path %>
-      <% end %>
-      <% if controller_name != 'registrations' %>
-        <%= link_to t(".signup"), new_user_registration_path %>
-      <% end %>
-    </p>
-  <% end %>
-
- <%= link_to "RU", '?lang=ru' %> |
- <%= link_to "EN", '?lang=en' %>
+<div class="navbar navbar-light bg-light">
+  <%= link_to 'TestGuru', root_path, class: 'navbar-brand' %>
+  <span class="navbar-text">
+    <% if user_signed_in? %>
+      <span class="navbar-text">
+        <%= t(".welcome") %>, <%= current_user.name %>
+        <%= link_to t(".logout"), destroy_user_session_path, method: :delete %>
+      </span>
+    <% else %>
+      <p>
+        <% if controller_name != 'sessions' %>
+          <%= link_to t(".login"), new_user_session_path %>
+        <% end %>
+        <% if controller_name != 'registrations' %>
+          <%= link_to t(".signup"), new_user_registration_path %>
+        <% end %>
+      </p>
+    <% end %>
+  </span>
+  <span class="navbar-text">
+    <%= link_to "RU", '?lang=ru' %> |
+    <%= link_to "EN", '?lang=en' %>
+  </span>
+</div>
