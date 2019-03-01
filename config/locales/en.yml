@@ -66,6 +66,10 @@ en:
         all_tests: 'All tests'
 
   test_passages:
+    show:
+      passing_of: "Passing of"
+      next: "Next"
+      question_no: "Question №"
     result:
       test: "Test"
       greatings: "Greatings!"
@@ -101,4 +105,12 @@ en:
     errors:
       header:
         one: "1 error detected"
-        other: "#{count} errors detected"
+        other: "%{count} errors detected"
+
+  devise:
+    sessions:
+      new:
+        login: "Log in"
+        rememberme: "Remember me"
+        email_placeholder: "Enter your email"
+        password_placeholder: "Enter your password"
