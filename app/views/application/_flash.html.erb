@@ -1,7 +1,17 @@
 <% if flash.present? %>
-  <div class="alert alert-success" role="alert">
-    <% flash.each do |key, message| %>
-      <%= content_tag :p, message, class: "flash #{key}" %>
-    <% end %>
-  </div>
+  <% flash.each do |key, message| %>
+    <%
+      alert_types = {
+          error:   :danger,
+          notice:  :info,
+          alert:   :danger
+      }
+    %>
+
+    <div class="alert alert-<%= alert_types[key.to_sym] %>" role="alert">
+      <%= content_tag :p, message %>
+    </div>
+  <% end %>
 <% end %>
+
+
