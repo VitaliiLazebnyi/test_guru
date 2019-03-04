@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   resources :test_passages, only: %i[show update] do
     member do
       post :start, to: 'test_passages#create'
-      get :result
+      post :gist
+      get  :result
     end
   end
 
@@ -20,5 +21,6 @@ Rails.application.routes.draw do
     resources :tests, shallow: true do
       resources :questions, except: %i[index show]
     end
+    resources :gists, only: :index
   end
 end

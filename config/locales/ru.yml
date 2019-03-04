@@ -24,6 +24,8 @@ ru:
         title: "Панель администратора | Мастер Тестов"
         welcome: "Здравствуйте"
         logout: "Выйти"
+        tests: "Тестьі"
+        gists: "Гистьі"
     questions:
       question:
         edit: "Редактировать"
@@ -64,18 +66,32 @@ ru:
         questions: 'Вопросы'
         add: 'Добавить вопрос'
         all_tests: 'Все тесты'
+    gists:
+      index:
+        title: 'Список гистов'
+        id: 'Гист #'
+        question: 'Вопрос'
+        url: 'URL'
+        email: 'Email'
+        created: 'Дата создания'
+      gist:
+        url: 'url'
 
   test_passages:
     show:
       passing_of: "Прохождение"
       next: "Следующий"
       question_no: "Вопрос №"
+      gist: "Gist Question"
     result:
       test: "Тест"
       greatings: "Поздравляем!"
       passed: "Ваш результат: 'ПРОШЕЛ'"
       failed: "Ваш результат: 'НЕ ПРОШЕЛ'"
       back: 'Назад к списку тестов'
+    gist:
+      success: "Gist успешно создан. %{url}"
+      failure: "Gist не может бьіть создан"
 
   tests:
     index:
@@ -116,3 +132,7 @@ ru:
         rememberme: "Запомнить меня"
         email_placeholder: "Введите свой email"
         password_placeholder: "Введите свой пароль"
+
+  services:
+    gist_question_service:
+      created: "Gist %{title} создан из приложения Мастер Тестов"

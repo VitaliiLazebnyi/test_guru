@@ -14,4 +14,5 @@
   <%= form.submit t('.next') %>
 <% end %>
 
+<%= link_to t('.gist'), gist_test_passage_path(@test_passage), method: :post %>
 <%= t('.question_no') %><%= @test_passage.question_number %>/<%= @test_passage.questions_count %>

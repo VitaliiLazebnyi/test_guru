@@ -24,6 +24,8 @@ en:
         title: "Admin | Test Guru"
         welcome: "Welcome"
         logout: "Logout"
+        tests: "Tests"
+        gists: "Gists"
     questions:
       question:
         edit: "Edit"
@@ -64,18 +66,32 @@ en:
         questions: 'Questions'
         add: 'Add question'
         all_tests: 'All tests'
+    gists:
+      index:
+        title: 'List of all Gists'
+        id: 'Gist #'
+        question: 'Question'
+        url: 'URL'
+        email: 'Email'
+        created: 'Created date'
+      gist:
+        url: 'url'
 
   test_passages:
     show:
       passing_of: "Passing of"
       next: "Next"
       question_no: "Question №"
+      gist: "Gist Question"
     result:
       test: "Test"
       greatings: "Greatings!"
       passed: "Your result is: 'PASSED'"
       failed: "Your result is: 'FAILED'"
       back: 'Back to all tests'
+    gist:
+      success: "Gist successfully created"
+      failure: "Gist can't be created"
 
   tests:
     index:
@@ -114,3 +130,7 @@ en:
         rememberme: "Remember me"
         email_placeholder: "Enter your email"
         password_placeholder: "Enter your password"
+
+  services:
+    gist_question_service:
+      created: "Gist created by %{title} from TestGuru Application"

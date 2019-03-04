@@ -20,6 +20,8 @@ class User < ApplicationRecord
   has_many :tests_owned, class_name: :Test, foreign_key: :author_id
   validates_associated :tests_owned
 
+  has_many :gists
+
   validates :name,
             presence: true,
             length: { in: 3..256 }
