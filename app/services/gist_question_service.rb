@@ -1,15 +1,17 @@
+# frozen_string_literal: true
+
 class GistQuestionService
   def initialize(question, client = nil)
     @question = question
     @test     = question.test
     @client   = client ||
-        Octokit::Client.new(access_token: ENV["GITHUB_TOKEN"]) ||
-        GithubClient.new
+                Octokit::Client.new(access_token: ENV['GITHUB_TOKEN']) ||
+                GithubClient.new
   end
 
   def call
     @client.create_gist(gist_params)
-  rescue
+  rescue StandardError
     nil
   end
 
@@ -20,7 +22,7 @@ class GistQuestionService
       description: I18n.t('services.gist_question_service.created', title: @test.title),
       files: {
         'test-guru-question.txt' => {
-            content: gist_content
+          content: gist_content
         }
       }
     }

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class GithubClient
   ROOT_ENDPOINT = 'https://api.github.com'
 
@@ -8,7 +10,7 @@ class GithubClient
   def create_gist(params)
     @http_cllient.post('/gists', params) do |requests|
       requests.headers['Authorization'] = "token #{ENV['GITHUB_TOKEN']}"
-      requests.headers['Content-Type']  = "application/json"
+      requests.headers['Content-Type']  = 'application/json'
       requests.body                     = params.to_json
     end
   end

@@ -27,17 +27,17 @@ class TestPassagesController < ApplicationController
     byebug
 
     flash_options = if result
-                      url = result["html_url"]
+                      url = result['html_url']
 
                       Gist.create(
-                          question: @test_passage.question.body,
-                          url: url,
-                          user: current_user
+                        question: @test_passage.question.body,
+                        url: url,
+                        user: current_user
                       )
 
-                      {notice: t('.success', url: url)}
+                      { notice: t('.success', url: url) }
                     else
-                      {alert: t('.failure')}
+                      { alert: t('.failure') }
                     end
 
     redirect_to @test_passage, flash_options

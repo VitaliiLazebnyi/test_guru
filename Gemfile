@@ -42,7 +42,7 @@ gem 'devise'
 gem 'faraday'
 
 # Github client
-gem "octokit"
+gem 'octokit'
 
 # Use ActiveStorage variant
 # gem 'mini_magick'
