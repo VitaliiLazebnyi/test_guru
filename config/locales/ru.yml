@@ -24,8 +24,8 @@ ru:
         title: "Панель администратора | Мастер Тестов"
         welcome: "Здравствуйте"
         logout: "Выйти"
-        tests: "Тестьі"
-        gists: "Гистьі"
+        tests: "Тесты"
+        gists: "Гисты"
     questions:
       question:
         edit: "Редактировать"
@@ -91,7 +91,7 @@ ru:
       back: 'Назад к списку тестов'
     gist:
       success: "Gist успешно создан. %{url}"
-      failure: "Gist не может бьіть создан"
+      failure: "Gist не может быть создан"
 
   tests:
     index:
