@@ -24,15 +24,13 @@ class TestPassagesController < ApplicationController
   def gist
     result = GistQuestionService.new(@test_passage.question).call
 
-    byebug
-
     flash_options = if result
                       url = result['html_url']
 
                       Gist.create(
-                        question: @test_passage.question.body,
-                        url: url,
-                        user: current_user
+                        question: @test_passage.question,
+                        user: current_user,
+                        url: url
                       )
 
                       { notice: t('.success', url: url) }

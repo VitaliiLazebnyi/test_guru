@@ -17,8 +17,6 @@ module TestGuru
     config.active_record.default_timezone = :utc
     config.i18n.default_locale            = :en
 
-    config.autoload_paths << "#{Rails.root}/lib/clients"
-
     config.before_configuration do
       env_file = File.join(Rails.root, 'config', 'local_env.yml')
       if File.exist?(env_file)

@@ -30,9 +30,9 @@ ActiveRecord::Schema.define(version: 20_190_305_094_515) do
   end
 
   create_table 'gists', force: :cascade do |t|
-    t.string 'question'
-    t.string 'url'
+    t.integer 'question_id'
     t.integer 'user_id'
+    t.string 'url'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
   end
