@@ -38,6 +38,12 @@ gem 'jbuilder'
 # Auth
 gem 'devise'
 
+# Networking
+gem 'faraday'
+
+# Github client
+gem 'octokit'
+
 # Use ActiveStorage variant
 # gem 'mini_magick'
 

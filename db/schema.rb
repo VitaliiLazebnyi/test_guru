@@ -12,7 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_181_216_220_402) do
+ActiveRecord::Schema.define(version: 20_190_305_094_515) do
   create_table 'answers', force: :cascade do |t|
     t.text 'body', null: false
     t.boolean 'correct', default: false
@@ -27,6 +27,14 @@ ActiveRecord::Schema.define(version: 20_181_216_220_402) do
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
     t.index ['title'], name: 'index_categories_on_title', unique: true
+  end
+
+  create_table 'gists', force: :cascade do |t|
+    t.integer 'question_id'
+    t.integer 'user_id'
+    t.string 'url'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
   create_table 'questions', force: :cascade do |t|

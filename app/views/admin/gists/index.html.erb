@@ -1,0 +1,12 @@
+<h1><%= t(".title") %></h1>
+
+<table>
+  <tr>
+    <th><%= t(".id") %></th>
+    <th><%= t(".question") %></th>
+    <th><%= t(".url") %></th>
+    <th><%= t(".email") %></th>
+    <th><%= t(".created") %></th>
+  </tr>
+  <%= render @gists %>
+</table>

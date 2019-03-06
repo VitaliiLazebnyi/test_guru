@@ -1,0 +1,7 @@
+<tr>
+  <td><%= gist.id %></td>
+  <td><%= truncate(gist.question.body, length: 25) %></td>
+  <td><%= link_to t(".url"), gist.url, target: '_blank' %></td>
+  <td><%= gist.user.email %></td>
+  <td><%= gist.created_at.iso8601 %></td>
+</tr>
