@@ -29,6 +29,7 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+config/local_env.yml
 
 .idea
 config/local_env.yml
