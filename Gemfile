@@ -23,6 +23,7 @@ gem 'rails-i18n'
 
 gem 'bootstrap'
 gem 'jquery-rails'
+gem 'octicons_helper'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails'
