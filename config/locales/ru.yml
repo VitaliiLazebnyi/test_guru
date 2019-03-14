@@ -66,6 +66,8 @@ ru:
         questions: 'Вопросы'
         add: 'Добавить вопрос'
         all_tests: 'Все тесты'
+      form_inline:
+        submit: 'Save'
     gists:
       index:
         title: 'Список гистов'

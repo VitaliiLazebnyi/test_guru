@@ -66,6 +66,8 @@ en:
         questions: 'Questions'
         add: 'Add question'
         all_tests: 'All tests'
+      form_inline:
+        submit: 'Save'
     gists:
       index:
         title: 'List of all Gists'
