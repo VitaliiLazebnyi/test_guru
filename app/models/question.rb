@@ -6,6 +6,6 @@ class Question < ApplicationRecord
   has_many   :gists
 
   validates_associated :answers
-  validates :test,    presence: true
-  validates :body,    presence: true, length: { in: 3..256 }
+  validates :test, presence: true
+  validates :body, presence: true, length: { in: 3..256 }
 end
