@@ -1,7 +1,7 @@
 <tr>
   <td><%= link_to test.id, admin_test_path(test) %></td>
   <td>
-    <%= link_to test.title, admin_test_path(test) %>
+    <%= link_to test.title, admin_test_path(test), class: 'test-title', data: { test_id: test.id } %>
     <%= render 'form_inline', test: @test == test ? @test : test %>
   </td>
   <td><%= test.level %></td>
