@@ -1,5 +1,7 @@
 <h1><%= t('.passing_of') %><%= @test_passage.test.title %></h1>
 
+<%= render 'progress_bar' %>
+
 <p>
   <%= @test_passage.question.body %>
 </p>
@@ -15,4 +17,4 @@
 <% end %>
 
 <%= link_to t('.gist'), gist_test_passage_path(@test_passage), method: :post %>
-<%= t('.question_no') %><%= @test_passage.question_number %>/<%= @test_passage.questions_count %>
+<%= t('.question_no') %><span class="current_question"><%= @test_passage.question_number %></span>/<span class="total_questions"><%= @test_passage.questions_count %></span>

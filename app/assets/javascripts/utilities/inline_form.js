@@ -6,6 +6,13 @@ document.addEventListener('turbolinks:load', function() {
             controls[i].addEventListener('click', formInlineLinkHandler);
         }
     }
+
+    const errors = document.querySelector('.resource-errors');
+
+    if (errors) {
+        const resourceId = errors.dataset.resourceId;
+        formInlineHandler(resourceId)
+    }
 });
 
 function formInlineLinkHandler(event){
@@ -16,19 +23,19 @@ function formInlineLinkHandler(event){
 }
 
 function formInlineHandler(testId){
-    console.log(testId);
-
     var link = document.querySelector('.form-inline-link[data-test-id="' + testId + '"]');
     var testTitle = document.querySelector('.test-title[data-test-id="' + testId + '"]');
     var formInline = document.querySelector('.form-inline[data-test-id="' + testId + '"]');
 
-    if (formInline.classList.contains('hide')) {
-        testTitle.classList.add('hide');
-        formInline.classList.remove('hide');
-        link.textContent = 'Cancel';
-    } else {
-        testTitle.classList.remove('hide');
-        formInline.classList.add('hide');
-        link.textContent = 'Edit';
+    if (formInline) {
+        if (formInline.classList.contains('hide')) {
+            testTitle.classList.add('hide');
+            formInline.classList.remove('hide');
+            link.textContent = 'Cancel';
+        } else {
+            testTitle.classList.remove('hide');
+            formInline.classList.add('hide');
+            link.textContent = 'Edit';
+        }
     }
 }
