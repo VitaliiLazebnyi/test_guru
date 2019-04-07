@@ -7,7 +7,6 @@ class Test < ApplicationRecord
   has_many   :test_passages
   has_many   :users, through: :test_passages, source: :user
 
-  validates_associated :users
   validates_associated :questions
 
   validates :title, uniqueness: { scope: :level }

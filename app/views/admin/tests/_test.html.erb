@@ -1,12 +1,22 @@
 <tr>
   <td><%= link_to test.id, admin_test_path(test) %></td>
-  <td><%= link_to test.title, admin_test_path(test) %></td>
+  <td>
+    <%= link_to test.title, admin_test_path(test), class: 'test-title', data: { test_id: test.id } %>
+    <%= render 'form_inline', test: @test == test ? @test : test %>
+  </td>
   <td><%= test.level %></td>
   <td><%= test.author.name %></td>
   <td><%= test.questions.size %></td>
   <td><%= test.created_at.iso8601 %></td>
   <td><%= test.updated_at.iso8601 %></td>
   <td><%= button_to t(".start"), start_test_passage_path(test), class: 'btn btn-primary' %></td>
-  <td><%= link_to t(".edit"), edit_admin_test_path(test), class: 'btn btn-primary' %></td>
+  <td>
+    <%=
+      link_to t(".edit"),
+              edit_admin_test_path(test),
+              data: { test_id: test.id },
+              class: 'btn btn-primary form-inline-link'
+    %>
+  </td>
   <td><%= link_to t(".delete"), admin_test_path(test), method: :delete, class: 'btn btn-primary' %></td>
 </tr>
