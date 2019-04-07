@@ -9,12 +9,12 @@ default: &default
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
-  user: cm0k
-  password: cm0k
 
 development:
   <<: *default
   database: test_guru_development
+  user: cm0k
+  password: cm0k
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -22,6 +22,8 @@ development:
 test:
   <<: *default
   database: test_guru_test
+  user: cm0k
+  password: cm0k
 
 production:
   <<: *default
