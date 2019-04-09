@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   root 'tests#index'
 
+  resources :feedbacks, only: %i[new create]
+
   resources :tests, only: :index, shallow: true do
     resources :questions, except: %i[index show]
   end

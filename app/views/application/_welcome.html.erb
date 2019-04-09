@@ -1,5 +1,6 @@
 <div class="navbar navbar-light bg-light">
   <%= link_to 'TestGuru', root_path, class: 'navbar-brand' %>
+  <%= link_to t('.feedback'), new_feedback_path, class: 'nav-brand' %>
   <span class="navbar-text">
     <% if user_signed_in? %>
       <span class="navbar-text">

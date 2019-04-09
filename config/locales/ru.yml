@@ -7,6 +7,7 @@ ru:
       login: "Войти"
       logout: "Выйти"
       signup: "Регистрация"
+      feedback: "Отозваться"
     footer:
       testguru: "Мастер Тестов"
       test_project: "Проект в онлай-школе Thinknetica"
@@ -111,6 +112,12 @@ ru:
     test:
       start: "Начать"
 
+  feedbacks:
+    new:
+      title: "Обратная связь"
+    create:
+      success: "Отзыв был успешно отправлен"
+
   tests_mailer:
     completed_test:
       subject: 'Вы прошли тест на платформе Мастер Тестов.'
@@ -118,6 +125,10 @@ ru:
       you_completed: "Поздравляем! Вы прошли "
       you_can: "Также можете пройти "
       this_ones: 'вот эти'
+  feedbacks_mailer:
+    send_feedback:
+      header: "Здравствуйте, был получен отзыв!"
+      subheader: "Вот его содержимое:"
 
   shared:
     errors:
