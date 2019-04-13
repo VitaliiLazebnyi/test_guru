@@ -1,0 +1,21 @@
+<h1><%= t(".title") %></h1>
+
+<%= render 'shared/errors', resource: @badge %>
+
+<p>
+  <table>
+    <tr>
+      <th><%= t(".id") %></th>
+      <th><%= t(".name") %></th>
+      <th><%= t(".url") %></th>
+      <th><%= t(".rule") %></th>
+      <th><%= t(".edit") %></th>
+      <th><%= t(".delete") %></th>
+    </tr>
+    <%= render @badges %>
+  </table>
+</p>
+
+<p>
+  <%= link_to t(".create"), new_admin_badge_path, class: 'btn btn-primary' %>
+</p>

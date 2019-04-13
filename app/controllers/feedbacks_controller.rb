@@ -12,7 +12,7 @@ class FeedbacksController < ApplicationController
 
     if @feedback.save
       FeedbacksMailer.send_feedback(@feedback.body).deliver_now
-      redirect_to tests_path, { notice: t('feedbacks.create.success') }
+      redirect_to tests_path, notice: t('feedbacks.create.success')
     else
       render :new
     end

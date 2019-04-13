@@ -17,7 +17,6 @@ class TestPassagesController < ApplicationController
 
   def update
     @test_passage.accept!(params[:answers_ids])
-
     redirect_to test_passage_path(@test_passage)
   end
 
@@ -49,6 +48,7 @@ class TestPassagesController < ApplicationController
 
   def redirect_to_results
     TestsMailer.completed_test(@test_passage).deliver_now
+    AwardWithBadgeService.new(current_user, @test_passage).award if @test_passage.passed?
     redirect_to result_test_passage_path(@test_passage)
   end
 
