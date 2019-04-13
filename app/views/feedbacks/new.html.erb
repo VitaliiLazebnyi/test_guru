@@ -1,0 +1,14 @@
+<h1><%= t(".title") %></h1>
+
+<%= form_with model: @feedback, local: true do |form| %>
+  <%= render 'shared/errors', resource: @feedback %>
+
+  <div class="form-group">
+    <%= form.label :body %>
+    <%= form.text_field :body,
+                        autofocus: true,
+                        class: 'form-control' %>
+  </div>
+
+  <%= form.submit class: 'btn btn-primary' %>
+<% end %>

@@ -7,6 +7,7 @@ en:
       login: "Login"
       logout: "Logout"
       signup: "Signup"
+      feedback: "Feedback"
     footer:
       testguru: "Test guru"
       test_project: "Project at online-school Thinknetica"
@@ -111,6 +112,12 @@ en:
     test:
       start: "Start"
 
+  feedbacks:
+    new:
+      title: "Feedback form"
+    create:
+      success: "Feedback was send successfully"
+
   tests_mailer:
     completed_test:
       subject: 'You just completed TestGuru test.'
@@ -118,6 +125,10 @@ en:
       you_completed: "Congratulations! You completed the "
       you_can: "You also can finish "
       this_ones: 'thease ones'
+  feedbacks_mailer:
+    send_feedback:
+      header: "Hello, some feedback was received!"
+      subheader: "Here is the text:"
 
   shared:
     errors:
