@@ -11,7 +11,7 @@
 User.create(name: 'Cm0k', firstname: 'Vitalii', lastname: 'Cm0k', email: 'admin@email.com', password: '123456', type: 'Admin')
 user     = User.create(name: 'Vitalii', email: "my#{Time.now.to_i}@email.com", password: '123456')
 category = Category.create(title: "General#{Time.now.to_i}")
-test     = category.tests.create(title: "Rails#{Time.now.to_i}", author: user)
+test     = category.tests.create(title: "Rails#{Time.now.to_i}", author: user, duration: 0)
 question = test.questions.create(body: 'What is Rails?')
 answer1   = question.answers.create(body: 'Fullstack framework.', correct: true)
 answer2   = question.answers.create(body: 'Frontend framework.')

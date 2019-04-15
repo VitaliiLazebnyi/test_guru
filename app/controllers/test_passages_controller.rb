@@ -2,8 +2,8 @@
 
 class TestPassagesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_test_passage
-  before_action :redirect_to_results, except: :result, if: :finished?
+  before_action :set_test_passage, except: :create
+  before_action :redirect_to_results, if: :finished?, except: %i[create result]
 
   def create
     @test = Test.find(params[:id])
@@ -43,7 +43,7 @@ class TestPassagesController < ApplicationController
   private
 
   def finished?
-    @test_passage.finished?
+    @test_passage&.finished?
   end
 
   def redirect_to_results

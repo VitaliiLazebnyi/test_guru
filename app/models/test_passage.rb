@@ -22,7 +22,7 @@ class TestPassage < ApplicationRecord
   end
 
   def finished?
-    question.nil?
+    question.nil? || time_left <= 0
   end
 
   def passed?
@@ -37,12 +37,21 @@ class TestPassage < ApplicationRecord
     test.questions.count
   end
 
+  def time_left
+    passed = Time.now - created_at
+    test.duration - passed
+  end
+
   private
 
   #
   # Before validation callbacks
   #
   def set_next_question
+    if !test.duration.zero? && created_at && created_at + test.duration > Time.now
+      return self.question = nil
+    end
+
     q = if question
           test.questions.order(:id).where('id > ?', question.id).first
         else

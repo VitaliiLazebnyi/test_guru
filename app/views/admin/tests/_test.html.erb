@@ -5,6 +5,7 @@
     <%= render 'form_inline', test: @test == test ? @test : test %>
   </td>
   <td><%= test.level %></td>
+  <td><%= test.duration %></td>
   <td><%= test.author.name %></td>
   <td><%= test.questions.size %></td>
   <td><%= test.created_at.iso8601 %></td>
