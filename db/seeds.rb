@@ -11,16 +11,17 @@
 User.create(name: 'Cm0k', firstname: 'Vitalii', lastname: 'Cm0k', email: 'admin@email.com', password: '123456', type: 'Admin')
 user     = User.create(name: 'Vitalii', email: "my#{Time.now.to_i}@email.com", password: '123456')
 category = Category.create(title: "General#{Time.now.to_i}")
-test     = category.tests.create(title: "Rails#{Time.now.to_i}", author: user, duration: 0)
-question = test.questions.create(body: 'What is Rails?')
-answer1   = question.answers.create(body: 'Fullstack framework.', correct: true)
-answer2   = question.answers.create(body: 'Frontend framework.')
-answer3   = question.answers.create(body: 'Backend framework.')
-answer4   = question.answers.create(body: 'Some... framework.')
+test     = category.tests.create!(title: "Rails#{Time.now.to_i}", author: user, duration: 30)
+question = test.questions.create!(body: 'What is Rails?')
+answer1   = question.answers.create!(body: 'Fullstack framework.', correct: true)
+answer2   = question.answers.create!(body: 'Frontend framework.')
+answer3   = question.answers.create!(body: 'Backend framework.')
+answer4   = question.answers.create!(body: 'Some... framework.')
+
 mark = TestPassage.create(
-  correctly_answered: 3,
-  user: user,
-  test: test
+    correctly_answered: 3,
+    user: user,
+    test: test
 )
 
 Badge.create!(
@@ -29,4 +30,3 @@ Badge.create!(
     rule_value: "",
     url: "https://cdn.pixabay.com/photo/2013/04/01/09/07/smile-98458__340.png"
 )
-

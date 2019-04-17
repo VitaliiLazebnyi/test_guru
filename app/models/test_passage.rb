@@ -4,6 +4,7 @@ class TestPassage < ApplicationRecord
   PASS_RATE = 0.85
 
   before_validation :set_next_question
+  before_validation :check_time_ended
 
   belongs_to :user
   belongs_to :test
@@ -38,6 +39,8 @@ class TestPassage < ApplicationRecord
   end
 
   def time_left
+    return 999999 if test.duration.zero?
+
     passed = Time.now - created_at
     test.duration - passed
   end
@@ -48,17 +51,20 @@ class TestPassage < ApplicationRecord
   # Before validation callbacks
   #
   def set_next_question
-    if !test.duration.zero? && created_at && created_at + test.duration > Time.now
-      return self.question = nil
-    end
-
     q = if question
           test.questions.order(:id).where('id > ?', question.id).first
         else
           test.questions.first
-    end
+        end
 
     self.question = q
+  end
+
+  def check_time_ended
+    if !test.duration.zero? && created_at && created_at + test.duration > Time.now
+      byebug
+      self.question = nil
+    end
   end
 
   # -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
