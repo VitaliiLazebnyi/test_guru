@@ -5,6 +5,7 @@ class Badges < ActiveRecord::Migration[5.2]
     t.text :name, null: false
     t.text :url, null: false
     t.text :rule, null: false
+    t.text :rule_value, null: false
   end
 
   create_table 'badges_users', force: :cascade do |t|
