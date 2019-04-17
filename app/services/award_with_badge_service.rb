@@ -13,7 +13,7 @@ class AwardWithBadgeService
     end
   end
 
-  def first_try_passed?
+  def first_try_passed?(_unused)
     passages = TestPassage.where(
         test_id: @test_passage.test_id,
         user_id: @test_passage.user_id
