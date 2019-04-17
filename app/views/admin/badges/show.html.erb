@@ -1,0 +1,17 @@
+<h1><%= t('.title') %></h1>
+<div>
+  <%= link_to t('.edit'), edit_admin_badge_path(@badge), class: 'btn btn-primary' %>
+  <%= link_to t('.delete'), admin_badge_path(@badge), method: :delete, class: 'btn btn-primary' %>
+</div>
+
+<p>
+  <div><%= t('.name') %>: <%= @badge.name %></div>
+  <div><%= t('.url``') %>: <%= @badge.url %></div>
+  <div><%= t('.rule') %>: <%= @badge.rule %></div>
+  <div><%= t('.rule_value') %>: <%= @badge.rule_value %></div>
+</p>
+
+<p>
+  <div><%= link_to t('.add'), new_admin_badge_path(@badge), class: 'btn btn-primary' %></div>
+  <div><%= link_to t('.all_badges'), admin_badges_path, class: 'btn btn-primary' %></div>
+</p>

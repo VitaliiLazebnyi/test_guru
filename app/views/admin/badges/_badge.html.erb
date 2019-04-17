@@ -1,0 +1,18 @@
+<tr>
+  <td><%= link_to badge.id, admin_badge_path(badge) %></td>
+  <td>
+    <%= link_to badge.name, admin_badge_path(badge), class: 'badge-title', data: { badge_id: badge.id } %>
+  </td>
+  <td><%= badge.url %></td>
+  <td><%= badge.rule %></td>
+  <td><%= badge.rule_value %></td>
+  <td>
+    <%=
+      link_to t(".edit"),
+              edit_admin_badge_path(badge),
+              data: { badge_id: badge.id },
+              class: 'btn btn-primary'
+    %>
+  </td>
+  <td><%= link_to t(".delete"), admin_badge_path(badge), method: :delete, class: 'btn btn-primary' %></td>
+</tr>

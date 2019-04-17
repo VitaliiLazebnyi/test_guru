@@ -1,0 +1,31 @@
+<h1><%= t('.header') %></h1>
+
+<% if current_user.badges.present? %>
+  <p>
+    <h2><%= t('.received') %></h2>
+    <table class="table">
+      <tr>
+        <th><%= t('.name') %></th>
+        <th><%= t('.image') %></th>
+        <th><%= t('.rule') %></th>
+        <th><%= t('.rule_value') %></th>
+      </tr>
+      <%= render current_user.badges %>
+    </table>
+  </p>
+<% end %>
+
+<% if @badges.present? %>
+  <p>
+    <h2><%= t('.existing') %></h2>
+    <table class="table">
+      <tr>
+        <th><%= t('.name') %></th>
+        <th><%= t('.image') %></th>
+        <th><%= t('.rule') %></th>
+        <th><%= t('.rule_value') %></th>
+      </tr>
+      <%= render @badges %>
+    </table>
+  </p>
+<% end %>

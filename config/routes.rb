@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root 'tests#index'
 
   resources :feedbacks, only: %i[new create]
+  resources :badges, only: :index
 
   resources :tests, only: :index, shallow: true do
     resources :questions, except: %i[index show]
@@ -25,5 +26,6 @@ Rails.application.routes.draw do
       resources :questions, except: %i[index show]
     end
     resources :gists, only: :index
+    resources :badges
   end
 end

@@ -8,7 +8,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(name: 'Cm0k', firstname: "Vitalii", lastname: "Cm0k", email: "admin@email.com", password: '123456', type: 'Admin')
+User.create(name: 'Cm0k', firstname: 'Vitalii', lastname: 'Cm0k', email: 'admin@email.com', password: '123456', type: 'Admin')
 user     = User.create(name: 'Vitalii', email: "my#{Time.now.to_i}@email.com", password: '123456')
 category = Category.create(title: "General#{Time.now.to_i}")
 test     = category.tests.create(title: "Rails#{Time.now.to_i}", author: user)
@@ -22,3 +22,11 @@ mark = TestPassage.create(
   user: user,
   test: test
 )
+
+Badge.create!(
+    name: "First Try",
+    rule: "first_try",
+    rule_value: "",
+    url: "https://cdn.pixabay.com/photo/2013/04/01/09/07/smile-98458__340.png"
+)
+

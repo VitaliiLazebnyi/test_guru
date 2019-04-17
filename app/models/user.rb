@@ -20,7 +20,9 @@ class User < ApplicationRecord
   has_many :tests_owned, class_name: :Test, foreign_key: :author_id
   validates_associated :tests_owned
 
+  has_and_belongs_to_many :badges, -> { distinct }
   has_many :gists
+  has_many :feedbacks
 
   validates :name,
             presence: true,

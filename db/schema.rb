@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_05_094515) do
+ActiveRecord::Schema.define(version: 2019_04_13_110000) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,18 @@ ActiveRecord::Schema.define(version: 2019_04_05_094515) do
     t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
+  create_table "badges", force: :cascade do |t|
+    t.text "name", null: false
+    t.text "url", null: false
+    t.text "rule", null: false
+    t.text "rule_value"
+  end
+
+  create_table "badges_users", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "badge_id", null: false
+  end
+
   create_table "categories", force: :cascade do |t|
     t.string "title", null: false
     t.datetime "created_at", null: false
@@ -33,6 +45,7 @@ ActiveRecord::Schema.define(version: 2019_04_05_094515) do
 
   create_table "feedbacks", force: :cascade do |t|
     t.text "body", null: false
+    t.integer "user_id", null: false
   end
 
   create_table "gists", force: :cascade do |t|
