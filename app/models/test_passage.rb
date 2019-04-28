@@ -61,7 +61,7 @@ class TestPassage < ApplicationRecord
   end
 
   def check_time_ended
-    if !test.duration.zero? && created_at && created_at + test.duration > Time.now
+    if test_duration_present? && time_ended?
       self.question = nil
     end
   end
@@ -80,5 +80,15 @@ class TestPassage < ApplicationRecord
 
   def correct_answers
     question.answers.correct
+  end
+
+  private
+
+  def test_duration_present?
+    !test.duration.zero?
+  end
+
+  def time_ended?
+    created_at && created_at + test.duration > Time.now
   end
 end
