@@ -61,9 +61,7 @@ class TestPassage < ApplicationRecord
   end
 
   def check_time_ended
-    if test_duration_present? && time_ended?
-      self.question = nil
-    end
+    self.question = nil if test_duration_present? && time_ended?
   end
 
   # -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
@@ -89,6 +87,6 @@ class TestPassage < ApplicationRecord
   end
 
   def time_ended?
-    created_at && created_at + test.duration > Time.now
+    Time.now > created_at && created_at + test.duration
   end
 end
