@@ -88,6 +88,6 @@ class TestPassage < ApplicationRecord
   end
 
   def time_ended?
-    Time.now > created_at && created_at + test.duration
+    created_at && created_at + test.duration < Time.now
   end
 end
