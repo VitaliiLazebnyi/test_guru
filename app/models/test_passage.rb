@@ -23,7 +23,7 @@ class TestPassage < ApplicationRecord
   end
 
   def finished?
-    question.nil? || time_left <= 0
+    question.blank? || expired?
   end
 
   def passed?
@@ -39,8 +39,6 @@ class TestPassage < ApplicationRecord
   end
 
   def time_left
-    return 999999 if test.duration.zero?
-
     passed = Time.now - created_at
     test.duration - passed
   end
@@ -61,7 +59,7 @@ class TestPassage < ApplicationRecord
   end
 
   def check_time_ended
-    self.question = nil if test_duration_present? && time_ended?
+    self.question = nil if expired?
   end
 
   # -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
@@ -80,7 +78,10 @@ class TestPassage < ApplicationRecord
     question.answers.correct
   end
 
-  private
+  # Check time / expiration
+  def expired?
+    test_duration_present? && time_ended?
+  end
 
   def test_duration_present?
     !test.duration.zero?
