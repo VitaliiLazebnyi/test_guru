@@ -62,7 +62,6 @@ class TestPassage < ApplicationRecord
 
   def check_time_ended
     if !test.duration.zero? && created_at && created_at + test.duration > Time.now
-      byebug
       self.question = nil
     end
   end
