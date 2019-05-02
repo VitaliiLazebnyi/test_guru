@@ -45,6 +45,7 @@ en:
         id: "ID"
         title: "Title"
         level: "Level"
+        duration: "Duration"
         author: "Author"
         questions_number: "Questions number"
         created: "Created at"
@@ -62,6 +63,7 @@ en:
         test_title: 'Title'
         category: 'Category'
         level: 'Level'
+        duration: 'Duration'
         author: 'Author'
         questions_number: 'Questions number'
         questions: 'Questions'

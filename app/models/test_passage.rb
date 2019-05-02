@@ -4,6 +4,7 @@ class TestPassage < ApplicationRecord
   PASS_RATE = 0.85
 
   before_validation :set_next_question
+  before_validation :check_time_ended
 
   belongs_to :user
   belongs_to :test
@@ -22,7 +23,7 @@ class TestPassage < ApplicationRecord
   end
 
   def finished?
-    question.nil?
+    question.blank? || expired?
   end
 
   def passed?
@@ -37,6 +38,11 @@ class TestPassage < ApplicationRecord
     test.questions.count
   end
 
+  def time_left
+    passed = Time.now - created_at
+    test.duration - passed
+  end
+
   private
 
   #
@@ -47,9 +53,13 @@ class TestPassage < ApplicationRecord
           test.questions.order(:id).where('id > ?', question.id).first
         else
           test.questions.first
-    end
+        end
 
     self.question = q
+  end
+
+  def check_time_ended
+    self.question = nil if expired?
   end
 
   # -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
@@ -66,5 +76,18 @@ class TestPassage < ApplicationRecord
 
   def correct_answers
     question.answers.correct
+  end
+
+  # Check time / expiration
+  def expired?
+    test_duration_present? && time_ended?
+  end
+
+  def test_duration_present?
+    !test.duration.zero?
+  end
+
+  def time_ended?
+    created_at && created_at + test.duration < Time.now
   end
 end

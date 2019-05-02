@@ -1,6 +1,11 @@
 <h1><%= t('.passing_of') %><%= @test_passage.test.title %></h1>
 
 <%= render 'progress_bar' %>
+<%=
+  unless @test_passage.test.duration.zero?
+    render 'timer', time_left: @test_passage.time_left
+  end
+%>
 
 <p>
   <%= @test_passage.question.body %>
