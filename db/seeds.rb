@@ -25,8 +25,8 @@ mark = TestPassage.create(
 )
 
 Badge.create!(
-    name: "First Try",
-    rule: "first_try",
-    rule_value: "",
-    url: "https://cdn.pixabay.com/photo/2013/04/01/09/07/smile-98458__340.png"
+  name: 'First Try',
+  rule: 'first_try',
+  rule_value: '',
+  url: 'https://cdn.pixabay.com/photo/2013/04/01/09/07/smile-98458__340.png'
 )
