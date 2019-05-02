@@ -19,7 +19,7 @@ document.addEventListener('turbolinks:load', function() {
         let seconds = Math.floor(time_left % 60);
 
         // Display the result in the element with id="countdown"
-        time_left_el.innerHTML = days + "d " + hours + "h "
+        time_left_el.textContent = days + "d " + hours + "h "
             + minutes + "m " + seconds + "s ";
 
         // If the count down is finished, write some text
