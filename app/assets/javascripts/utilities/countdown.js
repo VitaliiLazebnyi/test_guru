@@ -9,7 +9,7 @@ document.addEventListener('turbolinks:load', function() {
 
         // decrease time left value
         let time_left = parseFloat(time_left_el.dataset.timeleft);
-        time_left = time_left - 1;
+        time_left--
         time_left_el.dataset.timeleft = time_left;
 
         // Time calculations for days, hours, minutes and seconds
